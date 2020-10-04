@@ -6,7 +6,7 @@ const app = express();
 
 var items = ["Buy Food", "Cook Food", "Eat Food"];
 
-// For the embedded java script
+// For the embedded java script (EJS)
 app.set('view engine', 'ejs');
 
 // So we can pass data from page back to Server
