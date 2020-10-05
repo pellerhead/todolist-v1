@@ -1,7 +1,6 @@
 {
   "name": "todolist-v1",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +10,17 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.1.5",
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pellerhead/todolist-v1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pellerhead/todolist-v1/issues"
+  },
+  "homepage": "https://github.com/pellerhead/todolist-v1#readme",
+  "description": ""
 }
