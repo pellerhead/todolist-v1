@@ -6,8 +6,10 @@ const date = require(__dirname + "/date.js");
 
 const app = express();
 
-let items = ["Buy Food", "Cook Food", "Eat Food"];
-let workItems = [];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+
+// You can still push to an array.  Does not have to be a let.
+const workItems = [];
 
 // For the embedded java script (EJS)
 app.set('view engine', 'ejs');
@@ -21,8 +23,8 @@ app.use(express.static("public"));
 app.get("/", function(req, res) {
 
   // Shwoing how to use different functions in a JavaScript Object/Class
-  //let day = date.getDate();
-  let day = date.getDay();
+  const day = date.getDate();
+  //let day = date.getDay();
 
   res.render("list", {
     listTitle: day,
@@ -33,7 +35,7 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
 
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   if (req.body.list === "Work") {
     workItems.push(item);
@@ -53,7 +55,7 @@ app.get("/work", function(req, res) {
 });
 
 app.post("/work", function(req, res) {
-  let item = req.body.newItem;
+  const item = req.body.newItem;
   workItems.push();
   res.redirect("/work");
 });
