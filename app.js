@@ -3,7 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const date = require(__dirname + "/date.js");
-console.log(date());
 
 const app = express();
 
@@ -21,7 +20,9 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
 
-  let day = date();
+  // Shwoing how to use different functions in a JavaScript Object/Class
+  //let day = date.getDate();
+  let day = date.getDay();
 
   res.render("list", {
     listTitle: day,
