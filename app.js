@@ -66,18 +66,18 @@ app.post("/", function(req, res) {
   item.save();
 
   res.redirect("/");
-
-  // const item = req.body.newItem;
-
-  // if (req.body.list === "Work") {
-  //   workItems.push(item);
-  //   res.redirect("/work");
-  // } else {
-  //   items.push(item);
-  //   res.redirect("/");
-  // }
-
 });
+
+app.post("/delete", function(req, res) {
+  const  checkedItemId = req.body.checkbox;
+
+  Item.findOneAndDelete(checkedItemId, function(err) {
+    if (!err) {
+      console.log("Succesfully deleted checked item");
+      res.redirect("/");
+    }
+  })
+})
 
 app.get("/work", function(req, res) {
   res.render("list", {
